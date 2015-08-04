@@ -1,0 +1,15 @@
+<section class="contactinfo">
+	<div class="contact cf" ng-model="contacts">
+		<ul class = "contactlist">
+			<li class = "contast cf">
+				<div class = "info">
+					<h2>{{contacts[whichItem].fName}} {{contacts[whichItem].lName}}</h2>
+					<h3>Phone: {{contacts[whichItem].phone | tel}}</h3>
+					<h3>Email: {{contacts[whichItem].email}}</h3>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<a href="/#/list">&laquo; Back to search</a>
+	<a href="/#/edit/{{whichItem}}" style="float: right"> Edit &raquo;</a>
+</section>

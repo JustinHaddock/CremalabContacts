@@ -1,0 +1,17 @@
+<section class="newcontactpage">
+	<div class = "addition">
+		<h1> Add A Contact </h1>
+		<div class="addition_input">
+			<form name="additionForm" novalidate>
+				Name: <p><input type="text" style="width:49%;" ng-model="addition.fName" placeholder="John" required>
+				<input  type="text" style="width:50%;" ng-model="addition.lName" placeholder="Doe" required> </p>
+				Email: <input type="text" ng-model="addition.email" placeholder="John@Doe.com" type='email' required>
+				Phone Number: <input type="text" ng-model="addition.number" placeholder="8888888888" type='tel' ng-minlength = 9 ng-maxlength = 10 required>
+				Title: <input type="text" ng-model="addition.title" placeholder="website example" required>
+				<div class="addition_submitButton">
+					<a href="/#list"><button ng-disabled="additionForm.$invalid" ng-click='addition.addContact().$valid'>Submit</button></a>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

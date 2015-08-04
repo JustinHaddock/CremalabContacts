@@ -1,0 +1,28 @@
+<section class="contactpage">
+	<object class="logo" type="image/svg+xml" width="115px" height="115px" data="images/cremalab_icon.svg"></object>
+	<div class = "search">
+		<div class="search_input">
+			<input type="text" ng-model="query" placeholder="Search team..." autofocus>
+		</div>
+		<a class="search_add" ng-click="list.addContact()"> <button class="addMem">ADD NEW CONTACT</button></a>
+	</div>
+	<ul class = "contactlist">
+		<li class = "contast cf" ng-repeat="member in contacts | filter: query | orderBy: contactOrder:direction">
+			<a ng-click="list.editContact(contacts.indexOf(member))">
+				<div class = "info">
+					<table>
+						<tr>
+							<td><img style="width:100px; height:100px; border:1px solid #CCCCCC;"ng-src="images/{{member.short_name}}.png" alt="Photo of {{member.name}}"></td>
+							<td style="padding-left:10px"><h2>{{member.fName}} {{member.lName}}</h2>
+								<h3>{{member.title}}</h3>
+								<h3 class="table"><object class="table-cell" type="image/svg+xml" width="15px" height="15px" data="images/phone.svg"></object><span class="table-cell">&nbsp; {{member.phone | tel}}</span></h3>
+								<h3 class="table"><object class="table-cell" type="image/svg+xml" width="15px" height="15px" data="images/email.svg"></object><span class="table-cell">&nbsp; {{member.email}}</span></h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</a>
+		</li>
+	</ul>
+</section>
+

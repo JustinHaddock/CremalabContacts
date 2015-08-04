@@ -1,0 +1,16 @@
+<section class="editcontactpage">
+	<div class = "addition" ng-model="contacts">
+		<h1> Edit A Contact </h1>
+		<div class="addition_input">
+			<form name="editForm" novalidate>
+				Name: <p><input type="text" style="width:50%;" ng-model="contacts[whichItem].fName" value="{{contacts[whichItem].fName}}" required> 
+				<input type="text" style="width:49%;" ng-model="contacts[whichItem].lName" value="{{contacts[whichItem].lName}}"  required> </p>
+				Email: <input ng-model="contacts[whichItem].email" type='text' default="{{contacts[whichItem].email}}" required>
+				Phone Number: <input ng-model="contacts[whichItem].phone" type='tel' ng-minlength = 9 ng-maxlength = 10 default="{{contacts[whichItem].phone}}" required>
+				Title: <input ng-model="contacts[whichItem].title" type='text' default="{{contacts[whichItem].title}}" required>
+				<button ng-click='edit.editContact() && edit.closeThisDialog(0)' ng-show="!editForm.$invalid">Submit</button>
+				<button ng-click='edit.removeContact() && edit.closeThisDialog(0)' style="float: right;"> Remove Contact </button>
+			</form>
+		</div>
+	</div>
+</section>
